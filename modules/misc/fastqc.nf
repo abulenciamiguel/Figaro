@@ -1,7 +1,7 @@
 process fastqcRawSE {
         container 'staphb/fastqc:0.12.1'
 
-        tag "Check quality of ${sample}"
+        tag "Check quality of raw ${sample}"
 
         publishDir (
         path: "${params.outDir}/${task.process.replaceAll(":","_")}",
@@ -26,7 +26,7 @@ process fastqcRawSE {
 process fastqcTrimmedSE {
         container 'staphb/fastqc:0.12.1'
 
-        tag "Check quality of ${sample}"
+        tag "Check quality of trimmed ${sample}"
 
         publishDir (
         path: "${params.outDir}/${task.process.replaceAll(":","_")}",

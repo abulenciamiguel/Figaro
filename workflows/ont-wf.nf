@@ -73,6 +73,9 @@ workflow ontAmplicon {
             System.exit(1)
         }
 
+        // Insert here de novo assembly
+        // Kraken to get the most likely subtype; Create database containing only HIV sequences
+        // Get reference then do reference-based assembly using minimap2
         minimap2SE(nanoq.out.trimmedFastq, params.reference)
         sam2bam(minimap2SE.out.sam)
         sortIndexMinimap(sam2bam.out.bam)
